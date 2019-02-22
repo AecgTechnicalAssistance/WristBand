@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+         Title="激活模拟测试" Height="513" MaxHeight="513" MinHeight="513" Width="724" MaxWidth="724" MinWidth="724" ResizeMode="NoResize"  xmlns:my="clr-namespace:Utility.Tool.Controls.View;assembly=Utility.Tool.Controls" 
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Label Content="腕带编号" HorizontalAlignment="Left" Height="38" Margin="195,62,0,0" VerticalAlignment="Top" Width="88" HorizontalContentAlignment="Center" RenderTransformOrigin="1.059,0.555" />
+            <TextBox Name="No" HorizontalAlignment="Left" Height="25" Margin="288,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Label Content="测试时间" HorizontalAlignment="Left" Height="38" Margin="195,63,0,0" VerticalAlignment="Top" Width="88" HorizontalContentAlignment="Center" />
+            <my:DateTimePicker HorizontalAlignment="Left"
+                           Margin="283,63,0,0"
+                           Name="dateTimePicker1"
+                           VerticalAlignment="Top"
+                           Height="38"
+                           Width="290" />
+        </Grid>
+        <Grid Grid.Row="1" Margin="10,161.2,-10.4,0.2" Grid.RowSpan="2">
+            <Button Content="激活" HorizontalAlignment="Left" Margin="221,46,0,0" VerticalAlignment="Top" Width="75" Click="Button1_Click"/>
+            <Button Content="取消激活" HorizontalAlignment="Left" Margin="343,46,0,0" VerticalAlignment="Top" Width="75" Click="Button2_Click"/>
+            <TextBlock Name="display" HorizontalAlignment="Left" Margin="195,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
