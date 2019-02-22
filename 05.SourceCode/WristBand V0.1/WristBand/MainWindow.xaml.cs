@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Utility.Tool.Controls;
+using System.Configuration;
 
 namespace WpfApp1
 {
@@ -74,7 +75,8 @@ namespace WpfApp1
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://cpc.aecg.com.cn/TimeCollectorOpenAPI/TagActiveLog/UpdateTagActiveDateTime";
+            Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            string url= config.AppSettings.Settings["url"].Value;
             Encoding encoding = Encoding.GetEncoding("utf-8");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("TagCode", this.No.Text);
@@ -98,7 +100,8 @@ namespace WpfApp1
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://cpc.aecg.com.cn/TimeCollectorOpenAPI/TagActiveLog/UpdateTagActiveDateTime";
+            Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            string url = config.AppSettings.Settings["url"].Value;
             Encoding encoding = Encoding.GetEncoding("utf-8");
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("TagCode", this.No.Text);
